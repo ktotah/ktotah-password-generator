@@ -37,7 +37,70 @@ const generateBtn = document.querySelector("#generate");
 
     //Retunr the final password result:
 
+
+// Define the generatePassword function
+function generatePassword(){
+
+  // DETERMINING PASSWORD LENGTH
+  // prompt user for password length and parse it to an integer
+  let passwordLength = parseInt(prompt("Enter the number of characters for your password (8-128):")); 
+
+  //Validate password length
+  while(isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
+    passwordLength = parseInt(prompt("Password length must be an integer between 8 and 128 characters. How many characters should the password be?")) //paswordLength won't be officially set until the user inputs a valid integer 
+  } 
+
+  // DETERMING POSSIBLE CHARACTERS FOR PASSWORD
+  // Confirm character types to include
+  let includeLowercase = confirm("Include lowercase letters?");
+  let includeUppercase = confirm("Include uppercase letters?");
+  let includeNumeric = confirm("Include numbers?");
+  let includeSpecialCharacters = confirm("Include special characters?");
+
+  // Validate character type selection (at least one must be selected)
+  while (!includeLowercase && !includeUppercase && !includeNumeric && !includeSpecialCharacters) {
+    alert("At least one character type must be selected.");
+    includeLowercase = confirm("Include lowercase letter?");
+    includeUppercase = confirm("Include uppercase letters?");
+    includeNumeric = confirm("Include numbers?");
+    includeSpecialCharacters = confirm("Include special characters?");
+  }
+
+  // Initialize arrays for each character type
+  // using `split('')` to convert each string of characters into an array of individual characters
+  const lowercaseArray = 'abcdefghijklmnopqrstuvwxyz'.split('');
+  const uppercaseArray = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+  const numbersArray = '0123456789'.split('');
+  const specialArray = ' !"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'.split('');
   
+
+  // Initialize an array to store possible characters for password
+  let possibleCharacters = [];
+
+  // Concatenating arrays based on user choice for character types
+  if (includeLowercase) {
+    possibleCharacters = possibleCharacters.concat(lowercaseArray);
+  }
+  if (includeUppercase) {
+    possibleCharacters = possibleCharacters.concat(uppercaseArray);
+  }
+  if (includeNumeric) {
+    possibleCharacters = possibleCharacters.concat(numbersArray);
+  }
+  if (includeSpecialCharacters) {
+    possibleCharacters = possibleCharacters.concat(specialArray);
+  }
+
+
+
+
+
+
+  
+}
+
+
+
 function writePassword() {
   const password = generatePassword();
   const passwordText = document.querySelector("#password");
