@@ -8,7 +8,6 @@
 - [Tests](#tests)
 - [Author and Acknowledgment](#author-and-acknowledgment)
 - [License](#license)
-- [Contact](#contact)
 
 ## Description 
 This project is a browser-based password generator. It was created to provide users with a quick and secure way to generate random passwords that meet various security criteria.
