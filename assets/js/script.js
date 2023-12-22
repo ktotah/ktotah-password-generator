@@ -7,12 +7,29 @@ function generatePassword(){
 
   // DETERMINING PASSWORD LENGTH
 
-  // Prompt user for password length and parse it to an integer
-  let passwordLength = parseInt(prompt("Enter the number of characters for your password (8-128):")); 
+  // Prompt user for password length
+  let input = prompt("Enter the number of characters for your password (8-128):"); 
+
+  // Check if the prompt was cancelled (input === null) so the application doesn't keep prompting the user if it was cancelled (i.e., to improve user experience)
+  if (input === null) {
+    alert("Password generation cancelled.") // Alert the user about the cancellation
+    return null; // Exit the function early if cancelled
+  }
+
+  //and parse it to an integer
+  let passwordLength = parseInt(input);
 
   //Validate password length
   while(isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
-    passwordLength = parseInt(prompt("Password length must be an integer between 8 and 128 characters. How many characters should the password be?")) // Repeat prompt until a valid integer between 8 and 128 is entered
+    input = prompt("Password length must be an integer between 8 and 128 characters. How many characters should the password be?"); // Repeat prompt until a valid integer between 8 and 128 is entered
+
+    // Check again for cancellation during re-prompt to make sure, if the user cancelled, that they aren't continuously re-prompted
+    if (input === null)  {
+      alert("Password generation cancelled.") // Alert the user about the cancellation
+      return null; // Exit the function early if cancelled
+    }
+
+    passwordLength = parseInt(input) // Parse the new input to an integer
   } 
 
 
