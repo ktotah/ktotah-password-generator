@@ -90,16 +90,24 @@ function generatePassword(){
   if (includeSpecialCharacters) {
     possibleCharacters = possibleCharacters.concat(specialArray);
   }
-
-
-
-
-
-
   
+  // GENERATING FINAL PASSWORD
+  // Initializing a variable to store the final password result
+  let finalPassword = "";
+
+  // creating a for loop that runs as many times as the length of the password set by the user (starting at 0 and incrementing after each iteration until it reaches `passwordLength`) 
+  for (let i=0; i < passwordLength; i++){
+    // using Math.floor(Math.random() * possibleCharacters.length) to set a value for the randomIndex for placement i in the password based on rounding down the value of the random number generated between 0 (inclusive) & 1 (exclusive)multiplied by the length of our possibleCharacters array in order to get a random number to correspond to a value in the array
+    // i.e., say the array has a length of 10 (as if the user only selected numeric characters) and the random number generated is 0.99. Math.floor(0.99 * 10) === Math.floor(9.9) --> which rounds down to the nearest whole number which, in this case, is 9. Thus, randomIndex = 9.
+    const randomIndex = Math.floor(Math.random() * possibleCharacters.length);
+
+    // Adding the character at `randomIndex` in the `possibleCharacters` array to the right-hand side of the final password
+    // i.e., continuing the above example, where the password only contains numeric characters from our array ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'] (and keeping in mind that arrays are zero-indexed), possibleCharacter[9] = 9, so 9 is the value that will be added to the right-hand side of the final passwod
+    finalPassword += possibleCharacters[randomIndex];
+  }
+  // after the loop completes (i.e., after `passwordLength` iterations), this line returns the final, randomly-generated password string. 
+  return finalPassword;
 }
-
-
 
 function writePassword() {
   const password = generatePassword();
