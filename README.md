@@ -10,7 +10,7 @@
 - [License](#license)
 
 ## Description 
-This project is a browser-based password generator. It was created to provide users with a quick and secure way to generate random passwords that meet various security criteria.
+This project is a browser-based password generator, initiated as a challenge where I modified and enhanced starter code to create a fully functional application. It was created to provide users with a quick and secure way to generate random passwords that meet various security criteria.
 
 - **Motivation:** With the increasing need for strong online security, having a tool that can generate complex passwords is essential.
 - **Purpose:** The purpose of this tool is to make strong password creation straightforward and accessible for every internet user, regardless of their technical background.
