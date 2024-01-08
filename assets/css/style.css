@@ -1,28 +1,28 @@
+/* Global box sizing to ensure consistent rendering across elements*/
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+/* Base styling for HTML and BODY - setting up default font, background, and ensuring full height */
 html,
-body,
-.wrapper {
+body { /* Removed .wrapper from this selector grouping */
   height: 100%;
   margin: 0;
   padding: 0;
+  font-family: sans-serif; /* Consolidated font-family for consistency */
+  background-color: #f9fbfd; /* Consolidated  background-color for consistency */
 }
 
-body {
-  font-family: sans-serif;
-  background-color: #f9fbfd;
-}
-
+/* Specific styling for the main content wrapper */
 .wrapper {
   padding-top: 30px;
   padding-left: 20px;
   padding-right: 20px;
 }
 
+/* Styling for the header element - centralized text and color definition */
 header {
   text-align: center;
   padding: 20px;
@@ -30,6 +30,7 @@ header {
   color: hsl(206, 17%, 28%);
 }
 
+/* Card component styling - setting background, border, and box-shadow */
 .card {
   background-color: hsl(0, 0%, 100%);
   border-radius: 5px;
@@ -42,7 +43,8 @@ header {
   padding: 30px 40px;
 }
 
-.card-header::after {
+/* Consolidated redundant styling for .card-header::after and .card-footer::before */
+.card-header::after, .card-footer::before {
   content: " ";
   display: block;
   width: 100%;
@@ -50,28 +52,24 @@ header {
   height: 2px;
 }
 
+/* Styling for the body fo the card to ensure minimum height */
 .card-body {
   min-height: 100px;
 }
 
+/* Centralized text alignment for the footer of the card */
 .card-footer {
   text-align: center;
 }
 
-.card-footer::before {
-  content: " ";
-  display: block;
-  width: 100%;
-  background: #e7e9eb;
-  height: 2px;
-}
-
+/* Clear float styling for .card-footer */
 .card-footer::after {
   content: " ";
   display: block;
   clear: both;
 }
 
+/* Button styling */
 .btn {
   border: none;
   background-color: hsl(360, 91%, 36%);
@@ -88,15 +86,18 @@ header {
   cursor: pointer;
 }
 
+/* Specific styles for disabled buttons to indicate non-interactive state */
 button[disabled] {
   cursor: default;
   background: #c0c7cf;
 }
 
+/* Utility class for right alignment */
 .float-right {
   float: right;
 }
 
+/* Styling for password text area - custom appearance and size */
 #password {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -118,6 +119,7 @@ button[disabled] {
   overflow: hidden;
 }
 
+/* Responsive design for buttons on smaller screens - adjusts font size and margins */
 @media (max-width: 690px) {
   .btn {
     font-size: 1rem;
@@ -130,6 +132,7 @@ button[disabled] {
   }
 }
 
+/* Further responsive adjustments for very small screens */
 @media (max-width: 500px) {
   .btn {
     font-size: 0.8rem;
