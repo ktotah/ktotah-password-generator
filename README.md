@@ -2,6 +2,7 @@
 
 ## Table of Contents
 - [Description](#description)
+- [Project Background](#project-background)
 - [Deployed Application](#deployed-application)
 - [Usage](#usage)
 - [Screenshot](#screenshot)
