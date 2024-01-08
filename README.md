@@ -17,6 +17,9 @@ This project is a browser-based password generator, initiated as a challenge whe
 - **Problem It Solves:** This project addresses the common problem of weak password habits by automating the generation of complex credentials.
 - **What I Learned:** Through this project, I learned about user input validation, manipulating strings in JavaScript, enhancing user experience, and the importance of providing a user-friendly interface that accommodates different user interactions, including cancellations. 
 
+## Project Background
+This Password Generator project was initially started as a part of the Columbia University Fullstack Coding Bootcamp. The intial starter code was provided by the bootcamp, which included the basic HTML and CSS setup. My contribution involved refactoring the provided code and developing the JavaScript functionality to meet the project's requirements.
+
 ## Deployed Application
 This deployed application can be viewed here: [https://ktotah.github.io/ktotah-password-generator/](https://ktotah.github.io/ktotah-password-generator/)
 
